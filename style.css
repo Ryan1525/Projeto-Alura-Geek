@@ -1,0 +1,19 @@
+header{
+    background-color: rgb(3, 3, 3);
+    width: 1900px;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+h2{
+    color: rgb(221, 85, 32);
+    align-items: center;
+    font-size: 50px;
+    margin: 0px;
+}
+h1{
+    align-items: center;
+    justify-content: center;
+}

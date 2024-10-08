@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge AluraGeek</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #181717;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between; /* Para criar duas colunas */
+            padding: 20px;
+            width: 100%;
+        }
+
+        .product-list {
+            flex: 2; /* Coluna dos produtos */
+            padding-right: 20px; /* Espaço à direita da lista de produtos */
+        }
+
+        .add-product {
+            flex: 1; /* Coluna para adicionar produtos */
+            padding-left: 20px; /* Espaço à esquerda do formulário */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
+            gap: 20px; /* Espaçamento entre os cards */
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .form-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .form-container button[type="reset"] {
+            background-color: grey; /* Cor diferente para o botão Limpar */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Muniz Imports</h2>
+    </header>
+    <main>
+        <div class="product-list">
+            <h1>Meus Produtos</h1>
+            <div class="card-container">
+                <div class="card">
+                    <img src="camisa hugo.webp" alt="Camisa Hugo Boss - Produto">
+                    <p>Camisa Hugo Boss</p>
+                    <p>Preço: R$120,00</p>
+                    <button class="delete-btn">
+                        <i class="fas fa-trash"></i> Remover da Sacola
+                    </button>
+                </div>
+
+                <div class="card">
+                    <img src="camisa basica.jpg" alt="Camisa Básica - Produto">
+                    <p>Camisa Básica</p>
+                    <p>Preço: R$80,00</p>
+                    <button class="delete-btn">
+                        <i class="fas fa-trash"></i> Remover da Sacola
+                    </button>
+                </div>
+
+                <div class="card">
+                    <img src="bone nike.webp" alt="Boné Nike - Produto">
+                    <p>Boné Nike</p>
+                    <p>Preço: R$150,00</p>
+                    <button class="delete-btn">
+                        <i class="fas fa-trash"></i> Remover da Sacola
+                    </button>
+                </div>
+
+                <div class="card">
+                    <img src="bobojaco tommy.jpg" alt="Bobojaco Tommy Hilfiger - Produto">
+                    <p>Bobojaco Tommy Hilfiger</p>
+                    <p>Preço: R$400,00</p>
+                    <button class="delete-btn">
+                        <i class="fas fa-trash"></i> Remover da Sacola
+                    </button>
+                </div>
+
+                <div class="card">
+                    <img src="meias nike.jpg" alt="Meias Nike - Produto">
+                    <p>Meias Nike</p>
+                    <p>Preço: R$80,00</p>
+                    <button class="delete-btn">
+                        <i class="fas fa-trash"></i> Remover da Sacola
+                    </button>
+                </div>
+
+                <div class="card">
+                    <img src="bermuda nike.avif" alt="Bermuda Nike - Produto">
+                    <p>Bermuda Nike</p>
+                    <p>Preço: R$100,00</p>
+                    <button class="delete-btn">
+                        <i class="fas fa-trash"></i> Remover da Sacola
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-product">
+            <h1>Adicionar Produto</h1>
+            <div class="form-container">
+                <label for="product-name">Nome:</label>
+                <input type="text" id="product-name" placeholder="Nome do produto">
+
+                <label for="product-price">Valor:</label>
+                <input type="text" id="product-price" placeholder="Valor do produto">
+
+                <label for="product-image">Imagem:</label>
+                <input type="text" id="product-image" placeholder="URL da imagem">
+
+                <button type="button" id="save-btn">Guardar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </div>
+    </main>
+<footer>
+    <p>&copy; 2024 Muniz Imports. Todos os direitos reservados.</p>
+</footer>
+    <script>
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Produto removido da sacola!');
+            });
+        });
+
+        document.getElementById('save-btn').addEventListener('click', function() {
+            const name = document.getElementById('product-name').value;
+            const price = document.getElementById('product-price').value;
+            const image = document.getElementById('product-image').value;
+
+            if (name && price && image) {
+                alert(`Produto ${name} adicionado!`);
+                document.getElementById('product-name').value = '';
+                document.getElementById('product-price').value = '';
+                document.getElementById('product-image').value = '';
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+/* cards.css */
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaço entre os cards */
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 200px; /* Largura do card */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.card img {
+    max-width: 100%; /* Faz a imagem se ajustar ao tamanho do card */
+    border-radius: 5%; /* Arredonda os cantos da imagem */
+}
+
+.card-container--info {
+    margin-top: 10px; /* Espaço entre a imagem e as informações do card */
+    flex-wrap: wrap;
+}
+
+.card-container--value {
+    display: flex;
+    justify-content: space-between; /* Alinha preço e ícone de eliminação */
+    align-items: center; /* Centraliza verticalmente */
+}
+
